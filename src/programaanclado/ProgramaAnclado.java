@@ -1,38 +1,61 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package programaanclado;
-
-
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ProgramaAnclado {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        
         boolean resultadoOR = or(true, true);
         System.out.println("Resultado OR: " + resultadoOR);
         
         String fechaHoraActual = obtenerfechaHoraActual();
         System.out.println("La fecha actual es: " + fechaHoraActual);
-        System.out.println("Hola, prueba 2");
-        System.out.println("Es la prueba 3");
+        
+        Persona persona = new Persona("Diego", 20,22151167);
+        persona.mostrarDetalles();
+        persona = null;
+        System.gc();
+        System.out.println("Fin del programa.");
     }
-
+    
     public static boolean or(boolean a, boolean b) {
         return a || b;
-    }
-
+    } 
+    
     private static String obtenerfechaHoraActual() {
         LocalDateTime ahora = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return ahora.format(formato);
+    }
+}
 
+class Persona {
+    public String nombre;
+    public int edad;
+    public int numeroControl;
+  
+    public Persona(String nombre, int edad, int numeroControl) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.numeroControl = numeroControl;
+        System.out.println("Persona creada: " + nombre + ", " + edad + " años, y su numero de control:"
+                + numeroControl);
     }
-    
+    public void mostrarDetalles() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Numero de control: " + numeroControl);
     }
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            System.out.println("El objeto de la persona " + nombre + "de edad:  " + edad + 
+                    "y su numero de control: " + numeroControl);
+            System.out.println("Finalizo");
+        } finally {
+            super.finalize();
+        }
+    }
+}
