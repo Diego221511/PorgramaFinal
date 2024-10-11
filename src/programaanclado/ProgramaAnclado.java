@@ -54,6 +54,7 @@ class Persona {
             System.out.println("El objeto de la persona " + nombre + "de edad:  " + edad + 
                     "y su numero de control: " + numeroControl);
             System.out.println("Finalizo");
+            System.out.println("Hola esto es una pruba de git");
         } finally {
             super.finalize();
         }
