@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package programaanclado;
 
 
@@ -6,7 +10,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ProgramaAnclado {
-    
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         boolean resultadoOR = or(true, true);
         System.out.println("Resultado OR: " + resultadoOR);
@@ -26,10 +33,5 @@ public class ProgramaAnclado {
         return ahora.format(formato);
 
     }
-    
-    
-    
-    
-    
     
     }
