@@ -21,6 +21,7 @@ public class ProgramaAnclado {
         String fechaHoraActual = obtenerfechaHoraActual();
         System.out.println("La fecha actual es: " + fechaHoraActual);
         System.out.println("Hola, prueba 2");
+        System.out.println("Es la prueba 3");
     }
 
     public static boolean or(boolean a, boolean b) {
